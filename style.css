@@ -1,0 +1,170 @@
+/* Estilos Gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* Cabeçalho */
+header {
+    background-color: #eac7c5;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+/* Navegação */
+nav {
+    background-color: #575151;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #eac7c5;
+}
+
+/* Seção Hero */
+.hero {
+    background: url('https://via.placeholder.com/1200x400') no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 48px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+    margin: 20px;
+    text-align: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    width: 300px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.search-bar button {
+    padding: 10px 20px;
+    background-color: #eac7c5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #575151;
+}
+
+/* Seções de Categoria e Promoções */
+.category-section, .promotion-section, .book-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.category-section h2, .promotion-section h2, .book-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #eac7c5;
+}
+
+/* Card de Categoria */
+.categories, .book-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.category, .promotion-item, .book-item {
+    background-color: white;
+    width: 200px;
+    margin: 15px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.category img, .promotion-item img, .book-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.category-title, .book-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+.category:hover, .promotion-item:hover, .book-item:hover {
+    transform: scale(1.05);
+}
+
+/* Preço dos Livros */
+.book-price {
+    font-size: 16px;
+    color: green;
+    margin-top: 10px;
+}
+
+/* Carrinho */
+.cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff5722;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.cart:hover {
+    background-color: #e64a19;
+}
+
+/* Rodapé */
+footer {
+    background-color: #eac7c5;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    margin-top: 50px;
+}

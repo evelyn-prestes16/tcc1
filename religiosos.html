@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros Religiosos - Livraria Sagrado Livro & Arte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #575151;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .section-title {
+            text-align: center;
+            padding: 30px;
+        }
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .book {
+            background-color: white;
+            width: 200px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+        }
+        .book-title {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-author {
+            font-size: 14px;
+            color: gray;
+        }
+        .book-price {
+            font-size: 16px;
+            color: green;
+            margin: 10px 0;
+        }
+        .add-to-cart {
+            background-color: #eac7c5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #d4a5a3;
+        }
+        footer {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Livros Religiosos</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="promocoes.html">Promoções</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <section>
+        <div class="section-title">
+            <h2>Descubra Livros Espirituais e Religiosos</h2>
+        </div>
+        <div class="book-list">
+            <div class="book">
+                <img src="cic.jpg" alt="Livro 1">
+                <p class="book-title">Catecismo da Igreja Católica</p>
+                <p class="book-author">Edição Vaticano</p>
+                <p class="book-price">R$ 79,95</p>
+                <button class="add-to-cart" onclick="addToCart('Catecismo da Igreja Católica', 79.95)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="book">
+                <img src="aimitacaodecristo.jpeg" alt="Livro 2">
+                <p class="book-title">A Imitação de Cristo</p>
+                <p class="book-author">Tomás de Kempis</p>
+                <p class="book-price">R$ 49,90</p>
+                <button class="add-to-cart" onclick="addToCart('A Imitação de Cristo', 49.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="book">
+                <img src="bibliasagrada.jpg" alt="Livro 3">
+                <p class="book-title"> Bíblia Sagrada </p>
+                <p class="book-author">Versão Católica Apostólica</p>
+                <p class="book-price">R$ 89,90</p>
+                <button class="add-to-cart" onclick="addToCart('A Bíblia Sagrada', 89.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="book">
+                <img src="confissoes.jpg" alt="Livro 4">
+                <p class="book-title">Confissões</p>
+                <p class="book-author">Santo Agostinho</p>
+                <p class="book-price">R$ 55,90</p>
+                <button class="add-to-cart" onclick="addToCart('Confissões', 55.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="book">
+                <img src="operegrino.jpg" alt="Livro 5">
+                <p class="book-title">O Peregrino</p>
+                <p class="book-author">John Bunyan</p>
+                <p class="book-price">R$ 42,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Peregrino', 42.90)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Livraria Sagrado Livro & Arte. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="cart" onclick="viewCart()">🛒 Carrinho</div>
+
+    <script>
+        const cart = [];
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            alert(`"${title}" foi adicionado ao carrinho.`);
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Carrinho vazio no momento.");
+            } else {
+                let cartItems = "Itens no carrinho:\n";
+                cart.forEach((item, index) => {
+                    cartItems += `${index + 1}. ${item.title} - R$ ${item.price.toFixed(2)}\n`;
+                });
+                alert(cartItems);
+            }
+        }
+    </script>
+</body>
+</html>

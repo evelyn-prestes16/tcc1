@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria Sagrado Livro & Arte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #575151;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .hero {
+            background: url('https://www.ihu.unisinos.br/images/ihu/2024/01/16_01_filosofia_foto_vasiliy_nichegol_canva.jpg') no-repeat center center;
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 48px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .search-bar {
+            margin: 20px;
+            text-align: center;
+        }
+        .search-bar input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-bar button {
+            padding: 10px 20px;
+            background-color: #eac7c5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .category-section {
+            padding: 30px;
+            text-align: center;
+        }
+        .category-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .categories {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 50px;
+        }
+        .category {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+        .category img {
+            width: 100%;
+            height: auto;
+        }
+        .category-title {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+        .featured-books {
+            padding: 30px;
+            text-align: center;
+        }
+        .featured-books h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .book-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .book {
+            background-color: white;
+            width: 200px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+        }
+        .book-title {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-author {
+            font-size: 14px;
+            color: gray;
+        }
+        .book-price {
+            font-size: 16px;
+            color: green;
+            margin-top: 10px;
+        }
+        footer {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Livraria Sagrado Livro & Arte</h1>
+    </header>
+
+     <nav>
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="promocoes.html">Promoções</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <div class="hero">
+        <h1>Encontre o Livro Perfeito para Você!</h1>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar livros...">
+        <button>Buscar</button>
+    </div>
+
+    <section class="category-section">
+        <h2>Categorias Populares</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="ficção.jpeg" alt="Ficção"> <a href="livrosficcao.html"> Ficção </a>
+                <p class="category-title">Ficção</p>
+            </div>
+            <div class="category">
+                <img src="romeuejulieta.jpg" alt="Romance"> <a href="romance.html"> Romance</a>
+                <p class="category-title">Romance</p>
+            </div>
+            <div class="category">
+                <img src="tecnologia.jpeg" alt="Tecnologia"> <a href="tecnologia.html"> Tecnologia</a>
+                <p class="category-title">Tecnologia</p>
+            </div>
+            <div class="category">
+                <img src="cristao.jpeg" alt="Religiosos"> <a href="religiosos.html"> Religiosos</a>
+                <p class="category-title">Religiosos</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured-books">
+        <h2>Livros em Destaque</h2>
+        <div class="book-list">
+            <div class="book">
+                <img src="livros.jpeg" alt="Livro 1">
+                <p class="book-title">Coraline</p>
+                <p class="book-author">Neil Gaiman</p>
+                <p class="book-price">R$ 59,90</p>
+                <button class="add-to-cart" onclick="addToCart('Coraline', 59.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book">
+                <img src="comoeuera.webp" alt="Livro 2">
+                <p class="book-title">Como eu era antes de você</p>
+                <p class="book-author">Jojo Moyes</p>
+                <p class="book-price">R$ 42,00</p>
+                <button class="add-to-cart" onclick="addToCart('Como eu era antes de você', 42.00)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book">
+                <img src="cic.jpg" alt="Livro 3">
+                <p class="book-title">Catecismo da Igreja Católica</p>
+                <p class="book-author">Edição Vaticano</p>
+                <p class="book-price">R$ 79,95</p>
+                <button class="add-to-cart" onclick="addToCart('Catecismo da Igreja Católica', 79.95)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book">
+                <img src="tecin.jpg" alt="Livro 4">
+                <p class="book-title">Tecnlogia da Informação e Comunicação</p>
+                <p class="book-author">Luis Herman</p>
+                <p class="book-price">R$ 45,90</p>
+                <button class="add-to-cart" onclick="addToCart('Tecnologia da Informação e Comunicação', 45.90)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Livraria Completa. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="cart" onclick="viewCart()">🛒 Carrinho</div>
+
+    <script>
+        const cart = [];
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            alert(`"${title}" foi adicionado ao carrinho.`);
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Carrinho vazio no momento.");
+            } else {
+                let cartItems = "Itens no carrinho:\n";
+                cart.forEach((item, index) => {
+                    cartItems += `${index + 1}. ${item.title} - R$ ${item.price.toFixed(2)}\n`;
+                });
+                alert(cartItems);
+            }
+        }
+    </script>
+
+</body>
+</html>

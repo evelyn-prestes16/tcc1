@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros de Ficção - Livraria Sagrado Livro & Arte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #575151;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .section-title {
+            text-align: center;
+            padding: 30px;
+        }
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .book {
+            background-color: white;
+            width: 200px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .book img {
+            width: 100%;
+            height: auto;
+        }
+        .book-title {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-author {
+            font-size: 14px;
+            color: gray;
+        }
+        .book-price {
+            font-size: 16px;
+            color: green;
+            margin: 10px 0;
+        }
+        .add-to-cart {
+            background-color: #eac7c5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #d4a5a3;
+        }
+        footer {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Livros de Ficção</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="promocoes.html">Promoções</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <section>
+        <div class="section-title">
+            <h2>Explore Histórias Incríveis de Ficção</h2>
+        </div>
+        <div class="book-list">
+            <div class="book">
+                <img src="cortedeespinhos.jpeg" alt="Livro 1">
+                <p class="book-title">Corte de Espinhos e Rosas</p>
+                <p class="book-author">Sarah J. Maas</p>
+                <p class="book-price">R$ 54,90</p>
+                <button class="add-to-cart" onclick="addToCart('Corte de Espinhos e Rosas', 54.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="book">
+                <img src="osenhor.jpeg" alt="Livro 2">
+                <p class="book-title">O Senhor dos Anéis</p>
+                <p class="book-author">J.R.R. Tolkien</p>
+                <p class="book-price">R$ 99,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Senhor dos Anéis', 99.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="book">
+                <img src="duna.jpg" alt="Livro 3">
+                <p class="book-title">Duna</p>
+                <p class="book-author">Frank Herbert</p>
+                <p class="book-price">R$ 69,90</p>
+                <button class="add-to-cart" onclick="addToCart('Duna', 69.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="book">
+                <img src="amn.jpeg" alt="Livro 4">
+                <p class="book-title">Admirável Mundo Novo</p>
+                <p class="book-author">Aldous Huxley</p>
+                <p class="book-price">R$ 58,90</p>
+                <button class="add-to-cart" onclick="addToCart('Admirável Mundo Novo', 58.90)">Adicionar ao Carrinho</button>
+            </div>
+            <div class="book">
+                <img src="fcb.jpg" alt="Livro 5">
+                <p class="book-title">O livro da Ficção Científica Brasileira</p>
+                <p class="book-author">Maurício Coelho</p>
+                <p class="book-price">R$ 45,90</p>
+                <button class="add-to-cart" onclick="addToCart('O livro da Ficção Científica Brasileira', 45.90)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Livraria Sagrado Livro & Arte. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="cart" onclick="viewCart()">🛒 Carrinho</div>
+
+    <script>
+        const cart = [];
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            alert(`"${title}" foi adicionado ao carrinho.`);
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Carrinho vazio no momento.");
+            } else {
+                let cartItems = "Itens no carrinho:\n";
+                cart.forEach((item, index) => {
+                    cartItems += `${index + 1}. ${item.title} - R$ ${item.price.toFixed(2)}\n`;
+                });
+                alert(cartItems);
+            }
+        }
+    </script>
+</body>
+</html>

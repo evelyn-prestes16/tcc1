@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoções - Livraria Sagrado Livro & Arte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #575151;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .promo-section h2{
+           text-align: center;
+           color: #575151
+        }
+
+        .section-title {
+            text-align: center;
+            padding: 30px;
+        }
+        .promo-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .promo-item {
+            background-color: white;
+            width: 200px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .promo-item img {
+            width: 100%;
+            height: auto;
+        }
+        .promo-title {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .promo-author {
+            font-size: 14px;
+            color: gray;
+        }
+        .promo-price {
+            font-size: 16px;
+            color: green;
+            margin: 10px 0;
+        }
+        .promo-discount {
+            font-size: 14px;
+            color: red;
+            text-decoration: line-through;
+        }
+        .add-to-cart {
+            background-color: #eac7c5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #d4a5a3;
+        }
+        footer {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Promoções</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="promocoes.html">Promoções</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+    
+    <section class="promo-section">
+        <h2>Ofertas Imperdíveis</h2>
+        <div class="promo-list">
+            <div class="promo-item">
+                <img src="livro1.jpeg" alt="Promoção Livro 1">
+                <p class="promo-title">O Senhor dos Anéis</p>
+                <p class="promo-author">J.R.R. Tolkien</p>
+                <p class="promo-price">De R$ 89,90 por R$ 49,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Senhor dos Anéis', 49.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="promo-item">
+                <img src="livro2.jpeg" alt="Promoção Livro 2">
+                <p class="promo-title">1984</p>
+                <p class="promo-author">George Orwell</p>
+                <p class="promo-price">De R$ 69,90 por R$ 39,90</p>
+                <button class="add-to-cart" onclick="addToCart('1984', 39.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="promo-item">
+                <img src="livro3.jpeg" alt="Promoção Livro 3">
+                <p class="promo-title">Dom Quixote</p>
+                <p class="promo-author">Miguel de Cervantes</p>
+                <p class="promo-price">De R$ 59,90 por R$ 29,90</p>
+                <button class="add-to-cart" onclick="addToCart('Dom Quixote', 29.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="promo-item">
+                <img src="livro4.jpg" alt="Promoção Livro 4">
+                <p class="promo-title">A Revolução dos Bichos</p>
+                <p class="promo-author">George Orwell</p>
+                <p class="promo-price">De R$ 49,90 por R$ 24,90</p>
+                <button class="add-to-cart" onclick="addToCart('A Revolução dos Bichos', 24.90)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Livraria Sagrado Livro & Arte. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="cart" onclick="viewCart()">🛒 Carrinho</div>
+
+    <script>
+        const cart = [];
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            alert(`"${title}" foi adicionado ao carrinho.`);
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Carrinho vazio no momento.");
+            } else {
+                let cartItems = "Itens no carrinho:\n";
+                cart.forEach((item, index) => {
+                    cartItems += `${index + 1}. ${item.title} - R$ ${item.price.toFixed(2)}\n`;
+                });
+                alert(cartItems);
+            }
+        }
+    </script>
+</body>
+</html>

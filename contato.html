@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Livraria Sagrado Livro & Arte</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+header {
+    background-color: #eac7c5;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #575151;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+footer {
+    background-color: #eac7c5;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Formulário de contato e login */
+.contact-form, .login-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 20px auto;
+    box-sizing: border-box;
+}
+
+.contact-form h2 , .login-section h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-field {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="email"], input[type="password"] {
+    margin-bottom: 10px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #eac7c5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d69d96;
+}
+
+/* Layout para telas pequenas */
+@media (max-width: 600px) {
+    nav {
+        padding: 10px;
+    }
+
+    nav a {
+        font-size: 16px;
+        margin: 0 10px;
+    }
+
+    .contact-form, .login-section {
+        width: 90%;
+        margin: 10px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+ </style>
+</head>
+<body>
+    <header>
+        <h1>Contato</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="promocoes.html">Promoções</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <section>
+       <center> <h2>Entre em Contato Conosco</h2> </center>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-field">
+                    <label for="name">Nome:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-field">
+                    <label for="message">Mensagem:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <div class="form-field">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Formulário de Login -->
+        <div class="login-section">
+            <h3>Login</h3>
+            <form id="loginForm">
+                <div class="form-field">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+                <div class="form-field">
+                    <label for="loginPassword">Senha:</label>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+                <div class="form-field">
+                    <button type="submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Livraria Completa. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        // Função para enviar o formulário de contato sem recarregar a página
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+            
+            // Captura os valores dos campos do formulário
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Aqui você pode adicionar a lógica de envio do formulário (para um servidor ou API, por exemplo)
+            console.log(`Nome: ${name}`);
+            console.log(`Email: ${email}`);
+            console.log(`Mensagem: ${message}`);
+
+            // Exibe uma mensagem de sucesso
+            alert('Mensagem enviada com sucesso!');
+
+            // Limpa os campos do formulário
+            document.getElementById('contactForm').reset();
+        });
+
+        // Função para login (apenas simula o login)
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            const loginEmail = document.getElementById('loginEmail').value;
+            const loginPassword = document.getElementById('loginPassword').value;
+
+            // Exemplo de validação de login (simulado)
+            if (loginEmail === "usuario@exemplo.com" && loginPassword === "senha123") {
+                alert('Login bem-sucedido!');
+            } else {
+                alert('Email ou senha inválidos.');
+            }
+        });
+    </script>
+</body>
+</html>

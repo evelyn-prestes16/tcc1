@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" href="logo.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros - Livraria Sagrado Livro & Arte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #575151;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 20px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .section-title {
+            text-align: center;
+            padding: 30px;
+        }
+        .book-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .book-item {
+            background-color: white;
+            width: 200px;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .book-item img {
+            width: 100%;
+            height: auto;
+        }
+        .book-title {
+            font-size: 18px;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        .book-author {
+            font-size: 14px;
+            color: gray;
+        }
+        .book-price {
+            font-size: 16px;
+            color: green;
+            margin: 10px 0;
+        }
+        .add-to-cart {
+            background-color: #eac7c5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .add-to-cart:hover {
+            background-color: #d4a5a3;
+        }
+        footer {
+            background-color: #eac7c5;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .cart {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ff5722;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Livros</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Início</a>
+        <a href="livros.html">Livros</a>
+        <a href="categorias.html">Categorias</a>
+        <a href="promocoes.html">Promoções</a>
+        <a href="contato.html">Contato</a>
+    </nav>
+
+    <section>
+        <div class="section-title">
+            <h2>Explore Nossos Livros</h2>
+        </div>
+
+        <div class="book-list">
+            <div class="book-item">
+                <img src="capa_dez-mil-voltas_PNLD24.jpg" alt="">
+                <p class="book-title">Dez Mil Voltas ao Meu Mundo</p>
+                <p class="book-author">Zaire - Zansky e Rebeca Catarina</p>
+                <p class="book-price">R$ 39,90</p>
+                <button class="add-to-cart" onclick="addToCart('Dez Mil Voltas ao Meu Mundo', 39.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="aartedag.jpeg" alt="">
+                <p class="book-title">A Arte da Guerra</p>
+                <p class="book-author">Sun Tzu</p>
+                <p class="book-price">R$ 29,90</p>
+                <button class="add-to-cart" onclick="addToCart('A Arte da Guerra', 29.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="oalqui.jpg" alt="">
+                <p class="book-title">O Alquimista</p>
+                <p class="book-author">Paulo Coelho</p>
+                <p class="book-price">R$ 24,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Alquimista', 24.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="domquixote.jpg" alt="">
+                <p class="book-title">Dom Quixote</p>
+                <p class="book-author">Miguel de Cervantes</p>
+                <p class="book-price">R$ 39,90</p>
+                <button class="add-to-cart" onclick="addToCart('Dom Quixote', 39.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="osenhor.jpeg" alt="">
+                <p class="book-title">O Senhor dos Anéis</p>
+                <p class="book-author">J.R.R. Tolkien</p>
+                <p class="book-price">R$ 89,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Senhor dos Anéis', 89.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="livro2.jpeg" alt="">
+                <p class="book-title">1984</p>
+                <p class="book-author">George Orwell</p>
+                <p class="book-price">R$ 69,90</p>
+                <button class="add-to-cart" onclick="addToCart('1984', 69.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="livro4.jpg" alt="">
+                <p class="book-title">A Revolução dos Bichos</p>
+                <p class="book-author">George Orwell</p>
+                <p class="book-price">R$ 29,90</p>
+                <button class="add-to-cart" onclick="addToCart('A Revolução dos Bichos', 29.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="matarama.jpg" alt="">
+                <p class="book-title">Mataram a Cotovia</p>
+                <p class="book-author">Harper Lee</p>
+                <p class="book-price">R$ 39,90</p>
+                <button class="add-to-cart" onclick="addToCart('Mataram a Cotovia', 39.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="opequeno.webp" alt="">
+                <p class="book-title">O Pequeno Príncipe</p>
+                <p class="book-author">Antoine de Saint-Exupéry</p>
+                <p class="book-price">R$ 22,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Pequeno Príncipe', 22.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="ameniaq.jpg" alt="">
+                <p class="book-title">A Menina que Roubava Livros</p>
+                <p class="book-author">Markus Zusak</p>
+                <p class="book-price">R$ 34,90</p>
+                <button class="add-to-cart" onclick="addToCart('A Menina que Roubava Livros', 34.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="hppf.jpg" alt="">
+                <p class="book-title">Harry Potter e a Pedra Filosofal</p>
+                <p class="book-author">J.K. Rowling</p>
+                <p class="book-price">R$ 59,90</p>
+                <button class="add-to-cart" onclick="addToCart('Harry Potter e a Pedra Filosofal', 59.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="ohobbit.jpg" alt="">
+                <p class="book-title">O Hobbit</p>
+                <p class="book-author">J.R.R. Tolkien</p>
+                <p class="book-price">R$ 49,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Hobbit', 49.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="ocod.jpg" alt="">
+                <p class="book-title">O Código Da Vinci</p>
+                <p class="book-author">Dan Brown</p>
+                <p class="book-price">R$ 44,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Código Da Vinci', 44.90)">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="book-item">
+                <img src="ocaçador.jpg" alt="">
+                <p class="book-title">O Caçador de Pipas</p>
+                <p class="book-author">Khaled Hosseini</p>
+                <p class="book-price">R$ 39,90</p>
+                <button class="add-to-cart" onclick="addToCart('O Caçador de Pipas', 39.90)">Adicionar ao Carrinho</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Livraria Sagrado Livro & Arte. Todos os direitos reservados.</p>
+    </footer>
+
+    <div class="cart" onclick="viewCart()">🛒 Carrinho</div>
+
+    <script>
+        const cart = [];
+
+        function addToCart(title, price) {
+            cart.push({ title, price });
+            alert(`"${title}" foi adicionado ao carrinho.`);
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Carrinho vazio no momento.");
+            } else {
+                let cartItems = "Itens no carrinho:\n";
+                cart.forEach((item, index) => {
+                    cartItems += `${index + 1}. ${item.title} - R$ ${item.price.toFixed(2)}\n`;
+                });
+                alert(cartItems);
+            }
+        }
+    </script>
+</body>
+</html>
